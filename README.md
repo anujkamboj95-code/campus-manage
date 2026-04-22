@@ -12,14 +12,22 @@ A full-stack web application for managing campus room bookings and college event
 
 ### Prerequisites
 - Node.js (v16+)
-- MongoDB running locally on port 27017
+- MongoDB Atlas account (or local MongoDB on port 27017)
 
-### 1. Start Backend
+### 1. Configure Environment
+Create `backend/.env`:
+```
+PORT=5001
+MONGO_URI=your_mongodb_connection_string
+JWT_SECRET=your_jwt_secret
+```
+
+### 2. Start Backend
 ```bash
 cd backend
 npm install
 npm run seed      # Seed demo data (run once)
-npm run dev       # Start backend on port 5000
+npm run dev       # Start backend on port 5001
 ```
 
 ### 2. Start Frontend
@@ -30,11 +38,11 @@ npm start         # Start frontend on port 3000
 ```
 
 ## Demo Accounts
-| Role    | Email                  | Password    |
-|---------|------------------------|-------------|
-| Admin   | admin@campus.com       | admin123    |
-| Teacher | teacher@campus.com     | teacher123  |
-| Student | student@campus.com     | student123  |
+
+Demo credentials are configured in `backend/seed.js`.
+Run `npm run seed` to create them, then login with the credentials you set.
+
+> ⚠️ Never commit real credentials. Update `backend/seed.js` with your own before pushing.
 
 ## Features
 
